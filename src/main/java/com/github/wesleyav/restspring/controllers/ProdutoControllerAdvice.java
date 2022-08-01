@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.github.wesleyav.restspring.exceptions.ProductGenericException;
 import com.github.wesleyav.restspring.exceptions.ProductNullException;
 import com.github.wesleyav.restspring.exceptions.ProductPriceException;
 
 @ControllerAdvice
 public class ProdutoControllerAdvice extends ResponseEntityExceptionHandler {
 
-	@ExceptionHandler(ProductNullException.class)
+	@ExceptionHandler(ProductGenericException.class)
 	public ResponseEntity<Object> erro() {
 
 		Map<String, Object> body = new HashMap<String, Object>();
