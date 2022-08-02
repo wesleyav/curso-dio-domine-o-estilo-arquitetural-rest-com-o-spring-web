@@ -26,8 +26,8 @@ public class PedidoService {
 		Set<Produto> produtos = new HashSet<>();
 		pedido.setDataPedido(LocalDateTime.now());
 		pedido.getProdutos().forEach(produto -> {
-//			produtos.add(produtoRepository.getById(produto.getId()));
-			produtos.add(produtoRepository.getReferenceById(produto.getId()));
+			produtos.add(produtoRepository.getById(produto.getId()));
+//			produtos.add(produtoRepository.getReferenceById(produto.getId()));
 		});
 		pedido.setProdutos(produtos);
 		return pedidoRepository.save(pedido);
